@@ -1,0 +1,169 @@
+
+
+n=int(input("n의 값을 입력하세요:"))
+sum = 0
+
+for i in range(1,n+1):
+  sum=sum+i
+
+  print(sum)
+
+속력
+v=input()
+s=input()
+t=input()
+
+v=s/t
+
+속도
+
+Vd=input()
+Sd=input()
+t=input()
+
+Vd=Sd/t
+
+등가속도 직성 운동
+
+
+
+a=input()
+v=input()
+vo=input()
+t=input()
+
+a=(v-vo)/t
+
+
+속도와 시간 관계식
+
+v=vo+a* t
+n=int(input("n?")
+sum=0
+
+
+시그마
+
+n=int(input("n의 값을 입력하세요:"))
+sum = 0
+
+for i in range(1,n+1):
+  sum=sum[+i,+i**(수)]
+
+  print(sum)
+
+팩토리얼
+
+n=int(input("n의 값을 입력하세요:"))
+
+sum = 1
+
+for i in range(1,n+1):
+  sum=sum*i
+
+  print(sum)
+
+
+
+
+
+
+순열 조합 
+
+n=int(input())
+r=int(input())
+
+k = n-r+1
+
+sum=1
+
+for i in range(k,n+1):
+	sum=sum*i
+
+
+print(sum) #순열
+
+for j in range(1,r-1):
+	sum=sum/i
+
+print(sum) #조합
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
