@@ -42,17 +42,22 @@ def btn_add():
 def btn_equal():
     second_number = result.get()
     result.delete(0, END)
- 
-    if math == '더하기':
-        result.insert(0, f_num + float(second_number))
-    if math == '빼기':
-        result.insert(0, f_num - float(second_number))
-    if math == '곱하기':
-        result.insert(0, f_num * float(second_number))
-    if math == '나누기':
-        result.insert(0, f_num / float(second_number))
-    if math == '제곱':
-        result.insert(0, f_num ** float(second_number))
+    try:
+        if math == '더하기':
+            result.insert(0, f_num + float(second_number))
+        if math == '빼기':
+            result.insert(0, f_num - float(second_number))
+        if math == '곱하기':
+            result.insert(0, f_num * float(second_number))
+        if math == '나누기':
+            if second_number == '0':
+                result.insert(0, 'ERROR')
+            else:
+                result.insert(0, f_num / float(second_number))
+        if math == '제곱':
+            result.insert(0, f_num ** float(second_number))
+    except:
+        pass
  
 def b_subtract():
     first_number = result.get()
@@ -101,6 +106,11 @@ def btn_pi():
     result.delete(0, END)
     result.insert(0, round(pi, 5))
 
+def btn_sqrt():
+    inputnumber = result.get()
+    result.delete(0, END)
+    result.insert(0, round(sqrt(float(inputnumber)), 5))
+
 def btn_power():
     first_number = result.get()
     global f_num
@@ -108,6 +118,11 @@ def btn_power():
     math = '제곱'
     f_num = float(first_number)
     result.delete(0, END)
+
+def btn_log():
+    inputnumber = result.get()
+    result.delete(0, END)
+    result.insert(0, round(log10(float(inputnumber)), 5))
 #---------------------
 
 cal = Tk() #GUI 생성
@@ -150,9 +165,9 @@ bsub = Button(cal, text = '-', font = 30, command = b_subtract).place(x = 500, y
 bmult = Button(cal, text = '*', font = 30, command = btn_multiply).place(x = 500, y = 300, width = 100, height = 100)
 bdiv = Button(cal, text = '/', font = 30, command = btn_divide).place(x = 500, y = 400, width = 100, height = 100)
 
-bsqrt = Button(cal, text = '√', font = 30).place(x = 100, y = 100, width = 100, height = 100)
+bsqrt = Button(cal, text = '√', font = 30, command = btn_sqrt).place(x = 100, y = 100, width = 100, height = 100)
 bpower = Button(cal, text = '^', font = 30, command = btn_power).place(x = 100, y = 200, width = 100, height = 100)
-blog = Button(cal, text = 'log', font = 30).place(x = 100, y = 300, width = 100, height = 100)
+blog = Button(cal, text = 'log', font = 30, command = btn_log).place(x = 100, y = 300, width = 100, height = 100)
 ddot = Button(cal, text = '.', font = 30, command = btn_dot).place(x = 200, y = 400, width = 100, height = 100)
 
 bsin = Button(cal, text = 'sin', font = 30, command = btn_sin).place(x = 0, y = 100, width = 100, height = 100)
