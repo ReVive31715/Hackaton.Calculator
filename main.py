@@ -145,7 +145,10 @@ def btn_power():
 def btn_log():
     inputnumber = result.get()
     result.delete(0, END)
-    result.insert(0, round(log10(float(inputnumber)), 7))
+    if float(inputnumber) <= 0:
+        result.insert(0, 'ERROR')
+    else:
+        result.insert(0, round(log10(float(inputnumber)), 7))
 #----------GUI-----------
 
 pd.options.display.float_format = '{:.7f}'.format
